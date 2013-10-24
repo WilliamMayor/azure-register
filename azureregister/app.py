@@ -9,6 +9,12 @@ ISE = BASE.format(
     body=('<h1>500 Internal Server Error</h1>'
           '<p>Sorry, something went wrong on our end. Whoops.</p>')
     )
+BR = BASE.format(
+    title='Huh? What did you mean?',
+    body=('<h1>400 Bad Request</h1>'
+          '<p>Sorry, I didn\'t understand what you were asking for</p>'
+          '<p>Is that the right url?</p>')
+    )
 
 
 def build_page(url, query):
@@ -17,6 +23,7 @@ def build_page(url, query):
             title='Welcome',
             body='Stuff'
         )
+    return BR
 
 
 def application(environ, start_response):
